@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Fabulous Barbershop in Port Harcourt, Nigeria. Affordable haircuts, sharp fades and quality grooming.">
+  <title>Fabulous Barbershop | Port Harcourt</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101010;
+      --panel: #191919;
+      --gold: #d9ad62;
+      --white: #f7f4ee;
+      --muted: #aaa49a;
+      --line: #303030;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .container { width: min(1120px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-family: Oswald, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    .logo span, .gold { color: var(--gold); }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .nav-links > a:not(.btn) { font-size: 14px; color: #ddd; }
+    .nav-links > a:hover { color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 21px;
+      background: var(--gold);
+      color: #15120d;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: .2s;
+      text-align: center;
+    }
+    .btn:hover { background: #edc982; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); }
+    .btn-outline:hover { color: #15120d; }
+    .btn.disabled { opacity: .55; cursor: not-allowed; }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 { font-family: Oswald, sans-serif; text-transform: uppercase; }
+    h1 {
+      font-size: clamp(50px, 7vw, 86px);
+      line-height: 1.02;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+    h1 span { color: var(--gold); }
+
+    .hero {
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 48px;
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+    .hero-copy { max-width: 480px; color: var(--muted); margin-bottom: 28px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-image { height: 460px; position: relative; }
+    .hero-image img { height: 100%; }
+    .image-label {
+      position: absolute;
+      bottom: 20px;
+      left: -18px;
+      padding: 13px 18px;
+      background: var(--gold);
+      color: #17130c;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .trust { border-block: 1px solid var(--line); padding: 22px 0; }
+    .trust-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .trust-item { font-size: 11px; letter-spacing: 1px; color: #d4d0c8; }
+    .trust-item span { color: var(--gold); margin-right: 7px; }
+
+    section { padding: 90px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+    .section-head h2, .about-copy h2 {
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 1.12;
+    }
+    .section-head > p { color: var(--muted); max-width: 360px; font-size: 14px; }
+
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .service {
+      background: var(--panel);
+      padding: 27px;
+      border: 1px solid var(--line);
+      transition: .2s;
+    }
+    .service:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .service-number { color: var(--gold); font-size: 11px; letter-spacing: 2px; }
+    .service h3 { font-size: 22px; margin: 15px 0 9px; }
+    .service p { color: var(--muted); font-size: 14px; min-height: 65px; }
+    .price {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding-top: 15px;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .about { background: #171614; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 65px;
+    }
+    .about-image { height: 420px; }
+    .about-image img { height: 100%; }
+    .about-copy h2 { margin-bottom: 22px; }
+    .about-copy > p:not(.eyebrow) { color: var(--muted); margin-bottom: 17px; }
+    .about-copy .btn { margin-top: 10px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .gallery img { height: 300px; transition: .25s; filter: saturate(.85); }
+    .gallery img:hover { filter: saturate(1.1); }
+
+    .cta { text-align: center; background: var(--gold); color: #17130c; padding: 70px 22px; }
+    .cta .eyebrow { color: #4c3719; }
+    .cta h2 { font-size: clamp(38px, 6vw, 62px); line-height: 1.1; margin-bottom: 16px; }
+    .cta p:not(.eyebrow) { max-width: 510px; margin: 0 auto 25px; }
+    .cta .btn { background: #17130c; border-color: #17130c; color: white; }
+    .cta .btn:hover { background: #30271b; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .contact-card { border-top: 1px solid var(--gold); padding-top: 20px; }
+    .contact-card h3 { font-size: 19px; margin-bottom: 12px; }
+    .contact-card p, .contact-card a { color: var(--muted); font-size: 14px; }
+    .contact-card a:hover { color: var(--gold); }
+    .contact-note { color: var(--muted); font-size: 12px; margin-top: 10px; }
+
+    footer { border-top: 1px solid var(--line); padding: 26px 0; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      nav { min-height: 68px; }
+      .logo { font-size: 18px; }
+      .nav-links { gap: 12px; }
+      .nav-links > a:not(.btn) { display: none; }
+      .nav-links .btn { padding: 10px 12px; font-size: 11px; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 50px; }
+      .hero-image { height: 350px; margin-left: 10px; }
+      .image-label { left: -10px; }
+      section { padding: 68px 0; }
+      .section-head { flex-direction: column; align-items: start; gap: 12px; }
+      .services, .contact-grid { grid-template-columns: 1fr; }
+      .service p { min-height: auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-image { height: 320px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .gallery img { height: 210px; }
+      .gallery img:last-child { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">FABULOUS <span>BARBERSHOP.</span></a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Book a Cut ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <p class="eyebrow">Port Harcourt · Quality Grooming</p>
+        <h1>YOUR STYLE.<br>YOUR <span>STATEMENT.</span></h1>
+        <p class="hero-copy">
+          Look sharp. Feel confident. Get a fresh cut without breaking the
+          bank. Welcome to Fabulous Barbershop, your grooming destination
+          in Port Harcourt.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#contact">PLAN YOUR VISIT ↗</a>
+          <a class="btn btn-outline" href="#services">OUR SERVICES</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85"
+          alt="Stylish barbershop interior"
+          fetchpriority="high"
+        >
+        <div class="image-label">GOOD CUTS. GREAT CONFIDENCE.</div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust-inner">
+        <div class="trust-item"><span>✦</span> AFFORDABLE GROOMING</div>
+        <div class="trust-item"><span>✦</span> CLEAN, SHARP STYLES</div>
+        <div class="trust-item"><span>✦</span> ATTENTION TO DETAIL</div>
+        <div class="trust-item"><span>✦</span> PORT HARCOURT, NIGERIA</div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The service menu</p>
+            <h2>LOOK GOOD.<br><span class="gold">SPEND SMART.</span></h2>
+          </div>
+          <p>Quality grooming at affordable prices. Contact us for current
+            rates and to discuss the style you want.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <span class="service-number">01 / EVERYDAY ESSENTIAL</span>
+            <h3>Classic Haircut</h3>
+            <p>A neat, well-shaped cut tailored to your preferred look.</p>
+            <div class="price">Affordable pricing · Ask for rate</div>
+          </article>
+          <article class="service">
+            <span class="service-number">02 / CLEAN FINISH</span>
+            <h3>Fade & Taper</h3>
+            <p>Carefully blended sides and a crisp, fresh finish.</p>
+            <div class="price">Affordable pricing · Ask for rate</div>
+          </article>
+          <article class="service">
+            <span class="service-number">03 / BEARD CARE</span>
+            <h3>Beard Grooming</h3>
+            <p>Keep your beard looking tidy, shaped and well maintained.</p>
+            <div class="price">Affordable pricing · Ask for rate</div>
+          </article>
+          <article class="service">
+            <span class="service-number">04 / COMPLETE LOOK</span>
+            <h3>Cut & Beard</h3>
+            <p>A coordinated haircut and beard grooming session.</p>
+            <div class="price">Affordable pricing · Ask for rate</div>
+          </article>
+          <article class="service">
+            <span class="service-number">05 / THE DETAILS</span>
+            <h3>Hairline Touch-up</h3>
+            <p>Refresh your edges and bring your current style back to life.</p>
+            <div class="price">Affordable pricing · Ask for rate</div>
+          </article>
+          <article class="service">
+            <span class="service-number">06 / YOUR STYLE</span>
+            <h3>Custom Cut</h3>
+            <p>Have a reference photo or a specific style in mind? Let's talk.</p>
+            <div class="price">Contact us for a quote</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+            alt="Barber tools ready for a grooming session"
+            loading="lazy"
+          >
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">The Fabulous experience</p>
+          <h2>QUALITY CUTS.<br><span class="gold">FAIR PRICES.</span></h2>
+          <p>
+            At Fabulous Barbershop, looking your best should feel good
+            and fit your budget. We're building a grooming experience
+            focused on personal style, attention to detail and value.
+          </p>
+          <p>
+            Whether you're keeping your regular look or trying something
+            new, we're here to help you find your next fresh style.
+          </p>
+          <a class="btn" href="#contact">GET IN TOUCH ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The style inspiration</p>
+            <h2>THE <span class="gold">GALLERY.</span></h2>
+          </div>
+          <p>These are sample images. Replace them with real cuts and photos
+            from Fabulous Barbershop to showcase your own work.</p>
+        </div>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80" alt="Barber tools and grooming setup" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=80" alt="Barber working with a client" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80" alt="Barbershop interior inspiration" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <p class="eyebrow">Your next fresh look starts here</p>
+      <h2>FRESH CUT.<br>FRESH CONFIDENCE.</h2>
+      <p>Get in touch with Fabulous Barbershop in Port Harcourt.
+        Ask about our services and current prices.</p>
+      <a class="btn" href="#contact">PLAN YOUR VISIT ↗</a>
+    </div>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Let's connect</p>
+            <h2>VISIT <span class="gold">FABULOUS.</span></h2>
+          </div>
+          <p>We're based in Port Harcourt, Rivers State. Contact and
+            visit details will be updated as they are confirmed.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>LOCATION</h3>
+            <p>Port Harcourt, Rivers State, Nigeria.</p>
+            <p>Full shop address coming soon.</p>
+          </div>
+          <div class="contact-card">
+            <h3>BOOKING & ENQUIRIES</h3>
+            <p>Ask about services, prices and appointment availability.</p>
+            <p id="booking-action"></p>
+            <p class="contact-note" id="booking-note">
+              Our WhatsApp contact will be added soon.
+            </p>
+          </div>
+          <div class="contact-card">
+            <h3>OPENING HOURS</h3>
+            <p>Opening days and times will be announced soon.</p>
+            <p>Please confirm availability before visiting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#home">FABULOUS <span>BARBERSHOP.</span></a>
+      <p>© <span id="year"></span> Fabulous Barbershop.</p>
+      <p>Port Harcourt, Nigeria.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Add your real WhatsApp number in international format.
+    // Example: 2348012345678 — digits only, no +, spaces or dashes.
+    // Do not publish the example number as your business contact.
+    const WHATSAPP_NUMBER = "";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const bookingAction = document.getElementById("booking-action");
+    const bookingNote = document.getElementById("booking-note");
+
+    if (/^234\d{10}$/.test(WHATSAPP_NUMBER)) {
+      const message = encodeURIComponent(
+        "Hello Fabulous Barbershop! I'd like to ask about your services and prices."
+      );
+      const link = document.createElement("a");
+      link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Message us on WhatsApp ↗";
+      bookingAction.appendChild(link);
+      bookingNote.textContent = "We look forward to hearing from you.";
+    } else {
+      bookingNote.textContent =
+        "WhatsApp booking will be available once our business number is added.";
+    }
+  </script>
+</body>
+</html>
