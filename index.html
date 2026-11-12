@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="Fabulous Barbershop, Port Harcourt. Premium haircuts, clean fades and exceptional grooming.">
+  <meta name="description" content="Fabulous Barbershop, Port Harcourt. Unisex haircuts, clean fades, pedicure, facials and massage at 19/20 Ebony Rd, Rumuchita.">
   <title>Fabulous Barbershop | Port Harcourt</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +54,7 @@
       letter-spacing: 1px;
     }
     .logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
     .nav-links a { font-size: 14px; color: #ddd; }
     .nav-links a:hover { color: var(--gold); }
 
@@ -225,6 +225,71 @@
     .why-image { min-height: 360px; }
     .why-image img { height: 100%; }
 
+    /* Reviews — sits directly under the Why section */
+    .review-summary {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 26px 30px;
+      margin-bottom: 18px;
+    }
+    .review-score {
+      font-family: Oswald, sans-serif;
+      font-size: 54px;
+      line-height: 1;
+      color: var(--gold);
+    }
+    .stars { color: var(--gold); font-size: 16px; letter-spacing: 3px; }
+    .stars .off { color: #4a463f; }
+    .review-count { color: var(--muted); font-size: 13px; }
+    .review-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .review-tags span {
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #d4d0c8;
+    }
+    .review-more { margin-left: auto; color: var(--gold); font-size: 13px; }
+    .review-more:hover { text-decoration: underline; }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .review {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .review-text { color: #e8e4dc; font-size: 15px; margin-top: 14px; }
+    .review-meta {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .review-meta strong { display: block; }
+    .review-meta span { color: var(--muted); font-size: 12px; }
+    .owner-reply {
+      margin-top: 16px;
+      padding-left: 14px;
+      border-left: 2px solid var(--gold);
+    }
+    .owner-reply span {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .owner-reply p { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
     .about {
       background: #171614;
     }
@@ -289,6 +354,37 @@
     .cta .btn { border-color: #17130c; background: #17130c; color: white; }
     .cta .btn:hover { background: #30271b; }
 
+    /* FAQ — native details/summary, no script needed */
+    .faq-list { max-width: 840px; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item summary {
+      position: relative;
+      padding: 22px 46px 22px 0;
+      cursor: pointer;
+      list-style: none;
+      font-family: Oswald, sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      letter-spacing: .5px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-family: "DM Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item summary:hover { color: var(--gold); }
+    .faq-item p { max-width: 680px; padding-bottom: 22px; color: var(--muted); font-size: 14px; }
+    .faq-item p a { color: var(--gold); }
+    .faq-item p a:hover { text-decoration: underline; }
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -298,6 +394,8 @@
     .contact-card h3 { font-size: 19px; margin-bottom: 12px; }
     .contact-card p, .contact-card a { color: var(--muted); font-size: 14px; }
     .contact-card a:hover { color: var(--gold); }
+    .contact-card .contact-link { display: block; margin-top: 10px; color: var(--gold); }
+    .contact-note { font-size: 12px; margin-top: 12px; }
 
     footer { border-top: 1px solid var(--line); padding: 27px 0; }
     .footer-inner {
@@ -324,6 +422,11 @@
       .use-card { padding: 26px; }
       .why-grid { grid-template-columns: 1fr; gap: 34px; }
       .why-image { min-height: 0; height: 300px; }
+      .review-grid { grid-template-columns: 1fr; }
+      .review-summary { gap: 18px; padding: 22px; }
+      .review-score { font-size: 44px; }
+      .review-more { margin-left: 0; }
+      .review { padding: 24px; }
       .about-grid { grid-template-columns: 1fr; gap: 35px; }
       .about-image { height: 330px; }
       .gallery { grid-template-columns: repeat(2, 1fr); }
@@ -331,6 +434,7 @@
       .brand-panel { grid-template-columns: 1fr; gap: 28px; padding: 30px 24px; }
       .brand-copy .brand-lead { font-size: 17px; }
       .brand-pillars { grid-template-columns: 1fr; gap: 16px; }
+      .faq-item summary { font-size: 16px; padding-right: 34px; }
     }
   </style>
 </head>
@@ -342,6 +446,7 @@
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#why">Why</a>
+        <a href="#reviews">Reviews</a>
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
@@ -376,8 +481,8 @@
     <div class="trust">
       <div class="container trust-inner">
         <div class="trust-item"><span>✦</span> CLEAN, SHARP CUTS</div>
-        <div class="trust-item"><span>✦</span> ATTENTION TO DETAIL</div>
-        <div class="trust-item"><span>✦</span> YOUR STYLE, YOUR WAY</div>
+        <div class="trust-item"><span>★</span> 4.3 / 5 ON GOOGLE · 182 REVIEWS</div>
+        <div class="trust-item"><span>✦</span> UNISEX · PEDICURE · FACIALS</div>
         <div class="trust-item"><span>✦</span> PORT HARCOURT, NIGERIA</div>
       </div>
     </div>
@@ -510,9 +615,9 @@
             <div class="why-item">
               <span class="service-number">04</span>
               <div>
-                <h3>Clean Tools, Clean Station</h3>
-                <p>Sanitised clippers, a wiped station and a fresh cape for
-                  every single client.</p>
+                <h3>More Than A Haircut</h3>
+                <p>Unisex hair, pedicure, facials and massage under one roof —
+                  one trip, fully groomed.</p>
               </div>
             </div>
           </div>
@@ -527,6 +632,66 @@
       </div>
     </section>
 
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Straight from Google</p>
+            <h2>WHAT CLIENTS <span class="gold">SAY.</span></h2>
+          </div>
+          <p>Rated 4.3 out of 5 by 182 clients in Port Harcourt.
+            A few of their words, exactly as they wrote them.</p>
+        </div>
+
+        <div class="review-summary">
+          <div class="review-score">4.3</div>
+          <div>
+            <div class="stars" aria-label="4.3 out of 5 stars">
+              ★★★★<span class="off">★</span>
+            </div>
+            <p class="review-count">Based on 182 Google reviews</p>
+            <div class="review-tags">
+              <span>neat barbers</span>
+              <span>comfortable place</span>
+              <span>neat job</span>
+              <span>massage</span>
+            </div>
+          </div>
+          <a class="review-more" href="https://www.google.com/maps/search/?api=1&query=19%2F20+Ebony+Rd%2C+Oroazi+Rd%2C+Rumuchita%2C+Port+Harcourt+500272" target="_blank" rel="noopener noreferrer">
+            Read all 182 reviews ↗
+          </a>
+        </div>
+
+        <div class="review-grid">
+          <article class="review">
+            <p class="review-text">
+              “Unique barbing saloon for your unisex Hair and pedicure.
+              If you are in PH and thinking of where to get a beautiful,
+              unique and fabulous hair cut…” 
+            </p>
+            <div class="review-meta">
+              <strong>Josephine Owens</strong>
+              <span>Local Guide · 352 reviews · 4 years ago</span>
+            </div>
+            <div class="owner-reply">
+              <span>Response from the owner</span>
+              <p>Thanks a lot Josephine! We will be glad to have you back soonest!</p>
+            </div>
+          </article>
+          <article class="review">
+            <p class="review-text">
+              “They have the best barbers. You can also get massage,
+              facials, pedicure and many more.”
+            </p>
+            <div class="review-meta">
+              <strong>Mykhalio Nazar</strong>
+              <span>Google review · 5 months ago</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="about" id="about">
       <div class="container about-grid">
         <div class="about-image">
@@ -536,16 +701,21 @@
           >
         </div>
         <div class="about-copy">
-          <p class="eyebrow">Welcome to Fabulous</p>
+          <p class="eyebrow">About us</p>
           <h2>GOOD CUTS.<br><span class="gold">GREAT CONFIDENCE.</span></h2>
           <p>
-            At Fabulous Barbershop, we believe every client deserves a look
-            that feels right. Our goal is to deliver a welcoming experience,
-            careful craftsmanship and a finish you'll feel good about.
+            Fabulous Barbershop is a unisex salon on Ebony Road in Rumuchita,
+            Port Harcourt — inside Habee Concept. We're built around one idea:
+            a haircut should feel personal, not rushed.
           </p>
           <p>
-            Come in for your regular cut or get ready for a special occasion.
-            Let's get your style looking its best.
+            Come in for a fade, a beard shape or a full grooming session. Ask
+            about the rest too — alongside barbing, our team handles pedicures,
+            facials and massage, so you can leave looking and feeling brand new.
+          </p>
+          <p>
+            Find us at 19/20 Ebony Rd, off Oroazi Road. We're open late,
+            until 9:30 pm.
           </p>
           <a class="btn" href="#contact">COME THROUGH ↗</a>
         </div>
@@ -617,10 +787,58 @@
     <div class="cta">
       <p class="eyebrow">Your next fresh look starts here</p>
       <h2>READY FOR A<br>FRESH CUT?</h2>
-      <p>Make time for yourself. Reach out to Fabulous Barbershop and
+      <p>Make time for yourself. Call the shop or send a message and
         let's arrange your next visit.</p>
       <a class="btn" href="#contact">LET'S GET YOU BOOKED ↗</a>
     </div>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Before you come in</p>
+            <h2>QUESTIONS, <span class="gold">ANSWERED.</span></h2>
+          </div>
+          <p>The things clients ask us most. Still unsure? Give the shop
+            a call on 0802 927 2300.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Do I need an appointment?</summary>
+            <p>Walk-ins are welcome, but a quick call ahead saves you waiting —
+              especially on weekends and evenings.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where exactly is the shop?</summary>
+            <p>19/20 Ebony Rd, off Oroazi Rd, Rumuchita, Port Harcourt 500272,
+              inside Habee Concept. Plus code <strong>RXMR+37</strong> for your
+              maps app. <a href="https://www.google.com/maps/search/?api=1&query=19%2F20+Ebony+Rd%2C+Oroazi+Rd%2C+Rumuchita%2C+Port+Harcourt+500272" target="_blank" rel="noopener noreferrer">Get directions ↗</a></p>
+          </details>
+          <details class="faq-item">
+            <summary>What does a haircut cost?</summary>
+            <p>Rates depend on the service. Call <a href="tel:+2348029272300">0802 927 2300</a>
+              for current prices before you come in — no surprises at the counter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you cut women's hair?</summary>
+            <p>Yes. Fabulous is a unisex salon — haircuts for men and women,
+              plus pedicure, facials and massage.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are your opening hours?</summary>
+            <p>We close at 9:30 pm. Opening times can vary, so a quick call
+              ahead is the safest way to plan your visit. Hours may change on
+              public holidays.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I book for a wedding or event?</summary>
+            <p>Yes — grooms, groomsmen and groups. Book a day or two ahead so
+              we can give your party the time it needs.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
       <div class="container">
@@ -630,25 +848,28 @@
             <h2>VISIT <span class="gold">FABULOUS.</span></h2>
           </div>
           <p>Have a question or want to arrange a haircut?
-            Contact us to get started.</p>
+            Call, message or just walk in.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-card">
             <h3>LOCATION</h3>
-            <p>Port Harcourt, Rivers State, Nigeria</p>
-            <p>Add your full shop address here.</p>
+            <p>19/20 Ebony Rd, Oroazi Rd,<br>Rumuchita, Port Harcourt 500272,<br>Rivers State.</p>
+            <p class="contact-note">Located in: Habee Concept</p>
+            <a class="contact-link" href="https://www.google.com/maps/search/?api=1&query=19%2F20+Ebony+Rd%2C+Oroazi+Rd%2C+Rumuchita%2C+Port+Harcourt+500272" target="_blank" rel="noopener noreferrer">Get directions ↗</a>
           </div>
           <div class="contact-card">
             <h3>BOOKING</h3>
-            <p>Message us on WhatsApp to ask about availability.</p>
-            <a id="whatsapp-link" href="#" target="_blank" rel="noopener">
+            <p>Call us directly or message us on WhatsApp to ask about availability.</p>
+            <a class="contact-link" href="tel:+2348029272300">0802 927 2300</a>
+            <a id="whatsapp-link" class="contact-link" href="#" target="_blank" rel="noopener">
               Book on WhatsApp ↗
             </a>
           </div>
           <div class="contact-card">
             <h3>OPENING HOURS</h3>
-            <p>Add your actual opening days and hours here.</p>
-            <p>Hours may vary on public holidays.</p>
+            <p>Open late — closes 9:30 pm.</p>
+            <p>Call to confirm today's opening time.</p>
+            <p class="contact-note">Hours may vary on public holidays.</p>
           </div>
         </div>
       </div>
@@ -664,9 +885,8 @@
   </footer>
 
   <script>
-    // IMPORTANT: Replace with your WhatsApp number.
-    // Use international format without +, spaces or dashes.
-    const WHATSAPP_NUMBER = "2348012345678";
+    // WhatsApp uses the shop's business line in international format.
+    const WHATSAPP_NUMBER = "2348029272300";
 
     const message = encodeURIComponent(
       "Hello Fabulous Barbershop! I'd like to ask about booking a haircut."
