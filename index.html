@@ -397,12 +397,25 @@
     .contact-card .contact-link { display: block; margin-top: 10px; color: var(--gold); }
     .contact-note { font-size: 12px; margin-top: 12px; }
 
-    footer { border-top: 1px solid var(--line); padding: 27px 0; }
-    .footer-inner {
+    footer { border-top: 1px solid var(--line); padding: 60px 0 27px; background: #0c0c0c; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .footer-brand p { color: var(--muted); font-size: 13px; margin-top: 14px; max-width: 280px; }
+    .footer-col h3 { font-size: 13px; letter-spacing: 2px; color: var(--gold); margin-bottom: 14px; }
+    .footer-col p, .footer-col a { display: block; color: var(--muted); font-size: 13px; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-col p + p, .footer-col a + a, .footer-col p + a, .footer-col a + p { margin-top: 8px; }
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 12px;
     }
@@ -435,6 +448,10 @@
       .brand-copy .brand-lead { font-size: 17px; }
       .brand-pillars { grid-template-columns: 1fr; gap: 16px; }
       .faq-item summary { font-size: 16px; padding-right: 34px; }
+      footer { padding: 45px 0 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 30px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-brand p { max-width: none; }
     }
   </style>
 </head>
@@ -877,8 +894,34 @@
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <a href="#home" class="logo">FABULOUS <span>BARBERSHOP.</span></a>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">FABULOUS <span>BARBERSHOP.</span></a>
+        <p>Unisex grooming in Port Harcourt — haircuts, pedicure, facials
+          and massage. Rated 4.3 on Google.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>CALL US</h3>
+        <a href="tel:+2348029272300">0802 927 2300</a>
+        <a id="footer-whatsapp" href="https://wa.me/2348029272300" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>VISIT</h3>
+        <p>19/20 Ebony Rd, Oroazi Rd,<br>Rumuchita, Port Harcourt 500272,<br>Rivers State.</p>
+        <p>Inside Habee Concept</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>HOURS</h3>
+        <p>Closes 9:30 pm.</p>
+        <p>Call to confirm today's opening time.</p>
+        <p>May vary on public holidays.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
       <p>© <span id="year"></span> Fabulous Barbershop. All rights reserved.</p>
       <p>Made for fresh looks in Port Harcourt.</p>
     </div>
